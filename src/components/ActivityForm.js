@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/form.css";
 
-const ActivityForm = () => {
+const ActivityForm = ({ onAddActivity }) => {
   const [formData, setFormData] = useState({
     activity_name: "",
     activity_category: "",
@@ -20,7 +20,31 @@ const ActivityForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Submitted data:", formData);
+
+    const newActivity = {
+      id: Date.now().toString(), // Unique string ID
+      ...formData,
+    };
+
+    onAddActivity(newActivity);
+
+    // Save to localStorage
+    const existing = JSON.parse(localStorage.getItem("formActivities")) || [];
+    localStorage.setItem("formActivities", JSON.stringify([...existing, newActivity]));
+
+    alert("Activity added successfully!");
+
+    // Reset form
+    setFormData({
+      activity_name: "",
+      activity_category: "",
+      activity_location: "",
+      price: "",
+      commission_amount: "",
+      description: "",
+      age_range: "",
+      gender: "both",
+    });
   };
 
   return (
@@ -65,7 +89,7 @@ const ActivityForm = () => {
         <label>
           Gender:
           <select name="gender" value={formData.gender} onChange={handleChange}>
-            <option value="both">Both</option>
+            <option value="both">Other</option>
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
