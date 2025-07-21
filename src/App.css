@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.nav-bar {
+  background: #1e90ff;
+  padding: 10px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-bar a:hover {
+  text-decoration: underline;
+}

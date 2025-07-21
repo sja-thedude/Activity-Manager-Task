@@ -1,0 +1,36 @@
+.activity-list {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.activity-card {
+  background: #f5f9ff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.activity-card:hover {
+  transform: translateY(-5px);
+}
+
+.activity-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-size: 0.9rem;
+  color: #333;
+}
