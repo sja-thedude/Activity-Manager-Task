@@ -13,7 +13,7 @@ function App() {
   // Fetch once on load
   useEffect(() => {
     axios
-      .get("https://62.171.179.12/api/activities", {
+      .get("/api/activities", {
         headers: {
           "x-api-key": "your_super_secret_api_key",
         },
