@@ -8,7 +8,7 @@ const ActivityDetail = ({ activities }) => {
 
   useEffect(() => {
   axios
-    .get("https://62.171.179.12/api/activities", {
+    .get("http://62.171.179.12/api/activities", {
       headers: {
         "x-api-key": "your_super_secret_api_key",
       },

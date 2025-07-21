@@ -12,7 +12,7 @@ const ActivitiesPage = () => {
   useEffect(() => {
   const fetchActivities = async () => {
     try {
-      const res = await axios.get("https://62.171.179.12/api/activities", {
+      const res = await axios.get("http://62.171.179.12/api/activities", {
         headers: {
           "x-api-key": "your_super_secret_api_key",
         },
